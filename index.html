@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  
+  <aside class="sidebar">
+    <h2>✨ Tasks</h2>
+    <button data-filter="all">📋 All</button>
+    <button data-filter="completed">✅ Completed</button>
+    <button data-filter="pending">⏳ Pending</button>
+  </aside>
+
+  <main class="main">
+
+    <header>
+      <h1>Task Manager</h1>
+      <button id="themeToggle" class="theme-btn">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </header>
+
+    <div class="input-card">
+      <input type="text" id="taskText" placeholder="What’s on your mind?" />
+      <input type="date" id="dueDate" />
+
+      <select id="priority">
+        <option value="Low">🟢 Low</option>
+        <option value="Medium">🟡 Medium</option>
+        <option value="High">🔴 High</option>
+      </select>
+
+      <button id="addTask">＋ Add Task</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

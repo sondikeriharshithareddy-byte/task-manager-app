@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --bg: linear-gradient(135deg, #667eea, #764ba2);
+  --card: rgba(255,255,255,0.1);
+  --text: #fff;
+  --accent: #ff7a18;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f172a, #020617);
+  --card: rgba(30, 41, 59, 0.8);
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+}
+
+body.dark .task {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+body.dark .input-card {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+body.dark .sidebar {
+  box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+body.dark {
+  background: linear-gradient(270deg, #020617, #0f172a, #020617);
+  background-size: 400% 400%;
+  animation: darkFlow 10s ease infinite;
+}
+
+@keyframes darkFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.dark button:hover {
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+.theme-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark .theme-btn {
+  background: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-card {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--card);
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+}
+
+.input-card input,
+.input-card select {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.input-card input:focus,
+.input-card select:focus {
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.06);
+  color: white;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+}
+
+.input-card button {
+  background: var(--accent);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-card button:hover {
+  transform: scale(1.05);
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: var(--card);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.task:hover {
+  transform: translateY(-4px);
+}
+
+.task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.priority.High { color: #ff4d4d; }
+.priority.Medium { color: #ffd166; }
+.priority.Low { color: #06d6a0; }
+
+.task button {
+  border: none;
+  margin-left: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.task button:hover {
+  transform: scale(1.15);
+}
+
+.theme-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.theme-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+}
